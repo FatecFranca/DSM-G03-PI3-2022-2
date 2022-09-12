@@ -15,7 +15,7 @@ const scehma = mongoose.Schema({
         type: String,
         required: true,
         //Este campo não pode aparecer em consultas
-        select: false
+        select: false,
     },
     is_admin:{
         type: Boolean,
