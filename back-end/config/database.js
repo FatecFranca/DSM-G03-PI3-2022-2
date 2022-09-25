@@ -1,12 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-<<<<<<< Updated upstream
-module.exports = function() {
-    mongoose.connect('mongodb+srv://<username>:<password>@cluster0.qxxlirc.mongodb.net/?retryWrites=true&w=majority', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
-=======
 // Usa destruturaração para obter as variavies 
 // de ambiente necessarias para fazer a conexão
 // com o banco de dados
@@ -29,5 +22,4 @@ module.exports = function() {
     mongoose.connection.on('error', (err) => {
         console.error('** Mongoose: Erro de conexão. Causa: ' + erro)
     })
->>>>>>> Stashed changes
 }
