@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const Criterion = require('../models/Criterion')
 
 const controller = {} //Objeto vazio
 
@@ -15,7 +15,7 @@ const controller = {} //Objeto vazio
 
 controller.create = async (req, res) => {
     try {
-        await User.create(req.body)
+        await Criterion.create(req.body)
         //HTTP 201: Created
         res.status(201).end()
 
@@ -30,7 +30,7 @@ controller.retrieveAll = async (req, res) => {
     try{
         //find() sem parametros retorna todos os documentos 
         //da coleção
-        const result = await User.find()
+        const result = await Criterion.find()
         //HTTP 200: OK (implicito)
         res.send(result)
 
@@ -44,7 +44,7 @@ controller.retrieveAll = async (req, res) => {
 
 controller.retrieveOne = async (req, res) => {
     try {
-        const result = await User.findById(req.params.id)
+        const result = await Criterion.findById(req.params.id)
         
         //HTTP 200: OK (implicito)
         if (result) res.send(result) //Encontrou o documento
@@ -60,7 +60,7 @@ controller.retrieveOne = async (req, res) => {
 
 controller.update = async (req, res) => {
     try {
-        const result = await User.findByIdAndUpdate(req.params.id, req.body)
+        const result = await Criterion.findByIdAndUpdate(req.params.id, req.body)
         
         //HTTP 204: No content
         if (result) return res.status(204).end() //Encontrou e atualizou
@@ -77,7 +77,7 @@ controller.update = async (req, res) => {
 
 controller.delete = async (req, res) => {
     try {
-        const result = await User.findByIdAndDelete(req.params.id)
+        const result = await Criterion.findByIdAndDelete(req.params.id)
         
         //HTTP 204: No content
         if (result) return res.status(204).end() //Encontrou e Deleteu

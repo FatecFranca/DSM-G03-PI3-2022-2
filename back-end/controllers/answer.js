@@ -1,21 +1,12 @@
-const User = require('../models/User')
+const Answer = require('../models/Answer')
 
 const controller = {} //Objeto vazio
 
-/*  
-    Métodos de CRUD do controller
 
-    create: cria um novo usuario	
-    retrieveAll: retorna todos os usuarios cadsatrados
-    retrieceOne: retorna um  unico usuario especifico
-    update: atualiza um usuario
-    delete: remove um usuario
-
-*/
 
 controller.create = async (req, res) => {
     try {
-        await User.create(req.body)
+        await Answer.create(req.body)
         //HTTP 201: Created
         res.status(201).end()
 
@@ -30,7 +21,7 @@ controller.retrieveAll = async (req, res) => {
     try{
         //find() sem parametros retorna todos os documentos 
         //da coleção
-        const result = await User.find()
+        const result = await Answer.find().populate('user')
         //HTTP 200: OK (implicito)
         res.send(result)
 
@@ -44,7 +35,7 @@ controller.retrieveAll = async (req, res) => {
 
 controller.retrieveOne = async (req, res) => {
     try {
-        const result = await User.findById(req.params.id)
+        const result = await Answer.findById(req.params.id)
         
         //HTTP 200: OK (implicito)
         if (result) res.send(result) //Encontrou o documento
@@ -60,7 +51,7 @@ controller.retrieveOne = async (req, res) => {
 
 controller.update = async (req, res) => {
     try {
-        const result = await User.findByIdAndUpdate(req.params.id, req.body)
+        const result = await Answer.findByIdAndUpdate(req.params.id, req.body)
         
         //HTTP 204: No content
         if (result) return res.status(204).end() //Encontrou e atualizou
@@ -77,7 +68,7 @@ controller.update = async (req, res) => {
 
 controller.delete = async (req, res) => {
     try {
-        const result = await User.findByIdAndDelete(req.params.id)
+        const result = await Answer.findByIdAndDelete(req.params.id)
         
         //HTTP 204: No content
         if (result) return res.status(204).end() //Encontrou e Deleteu
