@@ -1,44 +1,44 @@
 const mongoose = require('mongoose')
+const Answer = require('./Answer')
 
 const schema = mongoose.Schema({
-    //Campo de chave estrangeira para a coleção User
+    // Campo de chave estrangeira para o model User
     user: {
         type: mongoose.ObjectId, // Tipo especial
-        ref: 'User', // Referencia a coleção User
-        required: true
+        ref: 'User',    // Coleção referenciada
+        required: true,
+        index: true
     },
-
     name: {
         type: String,
-        required: true,
-        
+        required: true
     },
     object: {
         type: String,
-        required: true,
-        
+        required: true
     },
     description: {
-        type: String,
-        
+        type: String
     },
     created_at: {
         type: Date,
         required: true,
-        default: Date.now() //Data/hora atual
+        default: Date.now(), // Data/hora atual
+        index: true
     },
     finished_at: {
-        type: Date,
-        
+        type: Date
     },
+    answers: [Answer]
 })
 
 /*
-         Parametro de mongooser.model:
-    1º - Nome do model, para uso interno. Por convenção,
-         usa-se Inicial Maiuscula.
-    2º - A relaçãod de campos do esquema (variavel schema)
-    3º - Nome da colelection no banco de dados (normalmente, é o mesmo nome do model, 
-         mas   pluralizado e com inicial minuscula)
+    Parâmetros de mongoose.model:
+    1º: o nome do model, para uso interno. Por convenção,
+        usa-se Inicial Maiúscula.
+    2º: a relação de campos do esquema (variável schema)
+    3º: o nome da collection no banco de dados (normalmente,
+        é o mesmo nome do model, mas pluralizado e com
+        inicial minúscula)
 */
-module.exports = mongoose.model('Assessment', schema, 'assessmets')
+module.exports = mongoose.model('Assessment', schema, 'assessments')

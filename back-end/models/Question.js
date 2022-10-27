@@ -1,33 +1,30 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
-    //Campo de chave estrangeira para a coleção Criterion
     criterion: {
-        type: mongoose.ObjectId, // Tipo especial
-        ref: 'Criterion', // Referencia a coleção Criterion
-        required: true
+        type: mongoose.ObjectId,
+        ref: 'Criterion',
+        index: true
     },
-    glosary_refs: {
-        type: mongoose.ObjectId, // Tipo especial
-        ref: 'Glossary', // Referencia a coleção Glossary
-        required: true
-    },
-
     order: {
         type: Number,
+        required: true,
+        index: true
     },
     enunciation: {
         type: String,
+        required: true
     },
-    
+    glossary_refs: [{
+        type: mongoose.ObjectId,
+        ref: 'Glossary'
+    }]
 })
 
 /*
-         Parametro de mongooser.model:
-    1º - Nome do model, para uso interno. Por convenção,
-         usa-se Inicial Maiuscula.
-    2º - A relaçãod de campos do esquema (variavel schema)
-    3º - Nome da colelection no banco de dados (normalmente, é o mesmo nome do model, 
-         mas   pluralizado e com inicial minuscula)
+    Parâmetros de mongoose.model:
+    1º - Nome da model, para uso interno (convenção: primeira letra maiúscula e singular)
+    2º - Relação de campos do esquema (schema)
+    3º - Nome da collection no banco de dados (convenção: mesmo nome da model com letra inicial minúsculas e plural)
 */
 module.exports = mongoose.model('Question', schema, 'questions')
