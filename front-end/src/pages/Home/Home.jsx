@@ -7,7 +7,7 @@ return(
  <div>
     <Nav2/>
     <main>
-        <h1>Home</h1>
+        <h1></h1>
     </main>
 </div>
     
