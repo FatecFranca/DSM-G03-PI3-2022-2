@@ -38,4 +38,7 @@ app.use('/glossary', glossaryRoute)
 const assessmentRoute = require('./routes/assessment')
 app.use('/assessment', assessmentRoute)
 
+const answerRoute = require('./routes/answer')
+app.use('/answer', answerRoute)
+
 module.exports = app;
