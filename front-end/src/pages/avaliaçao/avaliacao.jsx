@@ -1,17 +1,22 @@
 import Nav2 from "../../components/nav/nav";
-import "./Home.css"
 
 
 
-function Home() {
+
+function Avaliacao() {
 return(
  <div>
+ 
     <Nav2/>
  
+        <div>
+   
+        </div>
+
   
 </div>
     
 
     )
 }
-export default Home;
+export default  Avaliacao;
