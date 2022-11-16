@@ -9,11 +9,11 @@ function Nav2() {
         <ul className="list">
           <img className="logo" src={logo} />
           <li>
-          <Link to="/Avaliacao">
+          
           <div className="avali">
-            <p>Avaliação</p>
+            <button class="custom-btn btn-7" to="/Avaliacao">Avaliacão</button>
           </div>
-          </Link>
+     
           </li>
           
 

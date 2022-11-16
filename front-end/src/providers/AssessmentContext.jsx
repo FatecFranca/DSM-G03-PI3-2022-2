@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react"
 import toast from "react-hot-toast"
-import { useHistory } from "react-router-dom"
+import { useNavigate  } from "react-router-dom"
 import api from "../services/api"
 import { useAuth } from "./AuthContext"
 
@@ -17,7 +17,7 @@ const AssessmentProvider = ({ children }) => {
         JSON.parse(localStorage.getItem('@ergoframe:assessmentList')) || []
     )
 
-    const history = useHistory()
+    const navigate = useNavigate()
     const { token, userid } = useAuth()
 
     const createAssessment = async ({ title, description, url }) => {

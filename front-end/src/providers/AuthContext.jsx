@@ -2,8 +2,8 @@ import jwtDecode from "jwt-decode";
 import { useContext, useState } from "react";
 import { createContext } from "react";
 import toast from "react-hot-toast";
-import { useHistory } from "react-router-dom";
-import api from "../services/api";
+import { useNavigate } from "react-router-dom";
+// import api from "../services/api";
 
 const AuthContext = createContext()
 
@@ -14,7 +14,7 @@ const useAuth = () => {
 
 const AuthProvider = ({ children }) => {
 
-    const history = useHistory()
+    const navigate = useNavigate();
 
     const [token, setToken] = useState(() => {
         const tokenLocal = localStorage.getItem('@ergoframe:token')
