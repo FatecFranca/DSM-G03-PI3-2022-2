@@ -1,8 +1,5 @@
 import Nav2 from "../../components/nav/nav";
 
-
-
-
 function Avaliacao() {
 return(
  <div>
@@ -12,8 +9,6 @@ return(
         <div>
    
         </div>
-
-  
 </div>
     
 

@@ -1,7 +1,6 @@
 import Nav2 from "../../components/nav/nav";
-import Signin from "../../components/Signin";
-import Signup from "../../components/Signup";
 import { ContainerHome } from "./style";
+import Base from "../Base"
 import "./Home.css";
 
 function Home() {
@@ -9,13 +8,6 @@ function Home() {
     <Base>
       <ContainerHome>
         <Nav2 />
-        <aside>
-          {acesso ? (
-            <Signin setAcesso={setAcesso} />
-          ) : (
-            <Signup setAcesso={setAcesso} />
-          )}
-        </aside>
       </ContainerHome>
     </Base>
   );

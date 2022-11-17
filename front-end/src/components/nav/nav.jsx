@@ -15,16 +15,7 @@ function Nav2() {
           </div>
      
           </li>
-          
-
-        
-          
-
-
-          
-        </ul>
-   
-     
+        </ul>  
       </nav>
      </div >
 

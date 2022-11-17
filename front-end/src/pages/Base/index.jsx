@@ -1,14 +1,12 @@
-import Footer from "../../components/Footer"
-import Header from "../../components/Header"
+import Nav2 from "../../components/nav/nav";
 
 const Base = ({ children }) => {
     return (
         <>
-            <Header />
+            <Nav2 />
             <main>
                 {children}
             </main>
-            <Footer />
         </>
     )
 }
