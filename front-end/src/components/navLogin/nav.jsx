@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 import "./nav.css";
 
-function Nav2() {
+function NavLogin() {
   return (
     <div className="nav">
       <nav>
@@ -10,9 +10,13 @@ function Nav2() {
           <img className="logo" src={logo} />
           <li>
             <div className="avali">
-              <button class="custom-btn btn-7" to="/Avaliacao">
-                Avaliacão
+              <button class="custom-btn btn-7" to="/Cadastro">
+                Cadastro
               </button>
+              <button class="custom-btn btn-7" to="/Sobre">
+                Sobre
+              </button>
+              <button class="custom-btn btn-7" to="/"></button>
             </div>
           </li>
         </ul>
@@ -21,4 +25,4 @@ function Nav2() {
   );
 }
 
-export default Nav2;
+export default NavLogin;

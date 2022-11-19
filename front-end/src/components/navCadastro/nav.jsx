@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 import "./nav.css";
 
-function Nav2() {
+function NavCadastro() {
   return (
     <div className="nav">
       <nav>
@@ -10,6 +10,12 @@ function Nav2() {
           <img className="logo" src={logo} />
           <li>
             <div className="avali">
+              <button class="custom-btn btn-7" to="/Cadastro">
+                Login
+              </button>
+              <button class="custom-btn btn-7" to="/Sobre">
+                Sobre
+              </button>
               <button class="custom-btn btn-7" to="/Avaliacao">
                 Avaliacão
               </button>
@@ -21,4 +27,4 @@ function Nav2() {
   );
 }
 
-export default Nav2;
+export default NavCadastro;

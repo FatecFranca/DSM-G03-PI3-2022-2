@@ -12,18 +12,6 @@ const schema = mongoose.Schema({
         // de emails no cadastro
         index: { unique: true }
     },
-    password_hash: {
-        type: String,
-        required: true,
-        // Este campo não pode aparecer em consultas
-        select: false
-    },
-    is_admin: {
-        type: Boolean,
-        required: true,
-        // Por padrão, novos usuários NÃO SÃO admin
-        default: false
-    },
     created_at: {
         type: Date,
         required: true,
