@@ -10,12 +10,16 @@ function NavLogin() {
           <img className="logo" src={logo} />
           <li>
             <div className="avali">
-              <button class="custom-btn btn-7" to="/Cadastro">
+              <Link to="/cadastro">
+              <button class="custom-btn btn-7" >
                 Cadastro
               </button>
+              </Link>
+              <Link to="/Sobre">
               <button class="custom-btn btn-7" to="/Sobre">
                 Sobre
               </button>
+              </Link>
               <button class="custom-btn btn-7" to="/"></button>
             </div>
           </li>
