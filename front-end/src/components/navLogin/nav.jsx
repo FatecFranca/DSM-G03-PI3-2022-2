@@ -20,7 +20,6 @@ function NavLogin() {
                 Sobre
               </button>
               </Link>
-              <button class="custom-btn btn-7" to="/"></button>
             </div>
           </li>
         </ul>

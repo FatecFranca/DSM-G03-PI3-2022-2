@@ -1,24 +1,20 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import axios, { Axios } from "axios";
 import { useNavigate } from "react-router-dom";
 import NavLogin from "../../components/navLogin/nav";
-import validator from 'validator'
 import "./login.css";
+import { useForm } from "react-hook-form";
+import { api } from "../../services/api";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import Nav2 from "../../components/nav/nav";
 
-//Pagina Home da Aplicação
 const validation = yup.object().shape({
   email: yup
     .string()
     .email("Digite um email válido")
     .required("O email é obrigatório"),
 });
-
-function Login() {
-  let navigate = useNavigate();
-
+function Cadastro() {
   const {
     register,
     handleSubmit,
@@ -27,30 +23,45 @@ function Login() {
     resolver: yupResolver(validation),
   });
 
-  const onSubmit = (data) =>
-    axios
-      .get("http://localhost:3000/user", data)
-      .then(() => {
-        navigate("/");
+  const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    setEmail(data.email);
+
+    console.log("Usuário.: " + email);
+
+    const retorno = await api
+      .post("user/login", { email })
+      .then((response) => {
+        navigate("/home");
+        console.log(response);
       })
-      .catch(() => {});
+      .catch((error) => {
+        setAutorizado("Usuário ou senha inválidos");
+      });
+  }
 
   return (
     <div className="app">
       <div className="form">
-      <NavLogin/>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Entrar</h1>
-
+      <NavLogin />
+        <form className="teste" onSubmit={onSubmit}>
+          <h1 className="title">Login</h1>
           <label>
-            <h4>E-mail:</h4>
-            <input type="text" name="E-mail" {...register("email")} />
-            <p className="error-message">{errors.email?.message}</p>
-          </label>
-
-          <label>
-            <h4>Senha:</h4>
-            <input type="password" name="E-mail"/>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Digite seu e-mail..."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <p className="error-message">{errors.email?.message}</p>
           </label>
           <button type="submit">Entrar</button>
@@ -59,5 +70,4 @@ function Login() {
     </div>
   );
 }
-
-export default Login;
+export default Cadastro;

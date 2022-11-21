@@ -18,7 +18,7 @@ controller.create = async (req, res) => {
         // HTTP 201: Created
         res.status(201).end()
     }
-    catch(error) {
+    catch (error) {
         console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
@@ -33,7 +33,7 @@ controller.retrieveAll = async (req, res) => {
         // HTTP 200: OK (implícito)
         res.send(result)
     }
-    catch(error) {
+    catch (error) {
         console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
@@ -45,11 +45,11 @@ controller.retrieveOne = async (req, res) => {
         const result = await User.findById(req.params.id)
 
         // HTTP 200: OK (implícito)
-        if(result) res.send(result)     // Encontrou o documento
+        if (result) res.send(result)     // Encontrou o documento
         // HTTP 404: Not Found
         else res.status(404).end()      // Não encontrou
     }
-    catch(error) {
+    catch (error) {
         console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
@@ -61,10 +61,10 @@ controller.update = async (req, res) => {
         const result = await User.findByIdAndUpdate(req.params.id, req.body)
 
         // HTTP 204: No content
-        if(result) return res.status(204).end() // Encontrou e atualizou
+        if (result) return res.status(204).end() // Encontrou e atualizou
         else res.status(404).end()      // Não encontrou
     }
-    catch(error) {
+    catch (error) {
         console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
@@ -76,14 +76,39 @@ controller.delete = async (req, res) => {
         const result = await User.findByIdAndDelete(req.params.id)
 
         // HTTP 204: No content
-        if(result) res.status(204).end()    // Encontrou e excluiu
+        if (result) res.status(204).end()    // Encontrou e excluiu
         else res.status(404).end()          // Não encontrou
     }
-    catch(error) {
+    catch (error) {
         console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
     }
 }
+
+controller.login = async (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    try {
+        //buscar o usuário no banco de dados
+        console.log(req.body.email)
+        const user = await User.findOne({ email: req.body.email })
+        console.log(user);
+        if (!user)  // Usuário não encontrado
+        {
+            // HTTP 401: Unauthorized
+            res.status(401).end()
+        }
+    }
+    catch (error) {
+        console.error(error)
+        //HTTP 500: Internal Server Error
+        res.status(500).send(error)
+    }
+}
+
 
 module.exports = controller

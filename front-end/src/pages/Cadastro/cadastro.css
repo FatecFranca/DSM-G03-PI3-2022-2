@@ -1,7 +1,7 @@
 
 h1{
-    margin-bottom: -37px;
-    display: block;
+    align-items: center;
+    width: 150px;
 }
 form {
   height: 100vh;
@@ -47,6 +47,7 @@ button {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  left: -175px;
 }
 
 span {

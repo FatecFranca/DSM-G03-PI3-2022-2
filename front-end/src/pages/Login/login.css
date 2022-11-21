@@ -1,25 +1,28 @@
-
-h1{
-    margin-bottom: -37px;
-    display: block;
+h1 {
+  margin-bottom: 300px;
+  width: 0px;
+  right: 44px;
+  height: 10px;
+  position: relative;
+  top: -150px;
 }
 form {
-  height: 100vh;
+  height: 150vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 0px;
 }
-.form{
-    background-color: rgb(138, 138, 138);
-    position: fixed; 
-    top: 0;
-    left: 0; 
+.form {
+  background-color: rgb(138, 138, 138);
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
-img{
-    margin-bottom: -40px;
+img {
+  margin-bottom: -40px;
 }
 
 label {
@@ -37,21 +40,30 @@ input {
   height: 25px;
   width: 300px;
   margin-bottom: 10px;
+  position: relative;
+  top: -310px;
+  align-items: center;
+  text-align: center;
 }
 
 button {
   width: 100px;
-  height: 40px;
+  top: 10px;
+  height: -50px;
   background-color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   font-weight: bold;
   cursor: pointer;
+  position: center;
+  top: auto;
+  left: -175px;
+  align-self: center;
+  
 }
 
 span {
   color: red;
-  position:absolute;
+  position: absolute;
   margin-top: 50px;
 }
 .lnr-eye {
@@ -59,4 +71,8 @@ span {
   top: 5px;
   right: 10px;
   cursor: pointer;
+}
+botao {
+  align-items: center;
+  top: -10px;
 }
