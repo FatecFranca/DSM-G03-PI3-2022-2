@@ -42,13 +42,11 @@ function Cadastro() {
 
     const retorno = await api
       .post("user/login", { email })
-      .then((response) => {
-        navigate("/home");
+      .then(() => {
+        navigate("/Sobre");
         console.log(response);
       })
-      .catch((error) => {
-        setAutorizado("Usuário ou senha inválidos");
-      });
+      .catch(() => {});
   }
 
   return (
