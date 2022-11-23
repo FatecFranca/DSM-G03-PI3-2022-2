@@ -1,7 +1,7 @@
 // import Nav2 from "../../components/nav/nav";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useForm } from 'react-hook-form';
+
 import "./avaliacao.css"
 
 
@@ -15,7 +15,8 @@ function Avaliacao() {
           .get("http://localhost:3000/question")
     
           .then((response) => {
-            setonSubmit(response.data);
+            setonSubmit(response.data)
+            console.log(response.data)
           })
           .catch(() => {});
       }, []);

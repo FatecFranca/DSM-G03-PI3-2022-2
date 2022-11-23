@@ -1,23 +1,20 @@
 const mongoose = require('mongoose')
 
-const {
-  MONGODB_USER,
-  MONGODB_PASS,
-  MONGODB_SERVER,
-  MONGODB_DATABASE
-} = process.env
+// Usa desestruturação para obter as variáveis
+// de ambiente necessárias para fazer a conexão
+// ao banco de dados
 
 module.exports = function() {
-  mongoose.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_SERVER}/${MONGODB_DATABASE}?retryWrites=true&w=majority`, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-  })
+    mongoose.connect(  `mongodb+srv://api_pet:123456jv@cluster0.v4fnoqw.mongodb.net/?retryWrites=true&w=majority`, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
 
-  mongoose.connection.on('connected', () => 
-  console.log('** Mongoose conectado ao servidor remoto **')
-)
+    mongoose.connection.on('connected', () => 
+        console.log('** Mongoose conectado ao servidor remoto **')
+    )
 
-mongoose.connection.on('error', erro =>
-  console.error('*** Mongoose: ERRO DE CONEXÃO. Causa: ' + erro)
-)
+    mongoose.connection.on('error', erro =>
+        console.error('*** Mongoose: ERRO DE CONEXÃO. Causa: ' + erro)
+    )
 }

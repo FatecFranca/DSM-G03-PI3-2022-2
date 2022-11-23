@@ -6,7 +6,11 @@ import { useForm } from "react-hook-form";
 import { api } from "../../services/api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import "./login.css"
+
 import Nav2 from "../../components/nav/nav";
+
+
 
 const validation = yup.object().shape({
   email: yup
