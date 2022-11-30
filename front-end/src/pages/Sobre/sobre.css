@@ -1,0 +1,37 @@
+.sobre h1 {
+  position: absolute;
+  width: 105px;
+  height: 44px;
+  left: 117px;
+  top: 205px;
+  color: #ffff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.sobre p {
+  position: absolute;
+  width: 633px;
+  height: 179px;
+  left: 117px;
+  top: 275px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.sobre img {
+  position: absolute;
+  width: 432px;
+  height: 419px;
+  left: 839px;
+  top: 227px;
+}
