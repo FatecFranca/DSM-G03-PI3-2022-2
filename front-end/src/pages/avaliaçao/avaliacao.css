@@ -2,3 +2,11 @@
 .questao{
     text-align: center; 
 }
+.card{
+     position: absolute;
+    width: 1245px;
+    height: 260px;
+    left: 60px;
+    top: 132px;
+
+}
