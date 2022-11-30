@@ -4,7 +4,7 @@ import "./nav1.css";
 
 function Nav2() {
   return (
-    <div className="nav">
+    <div className="navB3">
       <nav>
         <ul className="list">
           <img className="logo" src={logo} />

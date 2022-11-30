@@ -1,11 +1,11 @@
-.nav {
+.navB2 {
   position: absolute;
   width: 1600px;
   height: 120px;
   left: 0px;
   top: 0px;
 
-  background: #bdb9b9;
+  background: #818181;
 }
 .list {
   list-style-type: none;

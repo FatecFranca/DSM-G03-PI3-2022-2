@@ -4,21 +4,19 @@ import "./nav4.css";
 
 function NavSobre() {
   return (
-    <div className="nav">
+    <div className="navB">
       <nav>
         <ul className="list">
           <img className="logo" src={logo} />
           <li>
             <div className="avali">
               <Link to="/cadastro">
-              <button class="custom-btn btn-7" >
-                Cadastro
-              </button>
+                <button class="custom-btn btn-7">Cadastro</button>
               </Link>
-              <Link to="/Login">
-              <button class="custom-btn btn-7" to="/Login">
-                Login
-              </button>
+              <Link to="/">
+                <button class="custom-btn btn-7" to="/">
+                  Login
+                </button>
               </Link>
             </div>
           </li>
