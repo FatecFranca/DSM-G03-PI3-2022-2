@@ -6,11 +6,8 @@ import { useForm } from "react-hook-form";
 import { api } from "../../services/api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import "./login.css"
-
-import Nav2 from "../../components/nav/nav";
-
-
+import "./login.css";
+import { Link } from "react-router-dom";
 
 const validation = yup.object().shape({
   email: yup
@@ -54,7 +51,7 @@ function Cadastro() {
   return (
     <div className="app">
       <div className="form">
-      <NavLogin />
+        <NavLogin />
         <form className="teste" onSubmit={onSubmit}>
           <h1 className="title">Login</h1>
           <label>
@@ -68,7 +65,9 @@ function Cadastro() {
             />
             <p className="error-message">{errors.email?.message}</p>
           </label>
-          <button type="submit">Entrar</button>
+          <Link to={"/Home"}>
+            <button>Entrar</button>
+          </Link>
         </form>
       </div>
     </div>
