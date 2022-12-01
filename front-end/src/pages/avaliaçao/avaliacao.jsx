@@ -28,7 +28,7 @@ function Avaliacao() {
     const [onSubmit, setonSubmit] = useState([]);
     const [onSub, setonSub] = useState([]);
   
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors }, } = useForm({
       resolver: yupResolver(validationPost)
   })
 
@@ -71,7 +71,7 @@ function Avaliacao() {
 
 return(
     
- <div>
+ <div className="app"> 
       <Nav2/> 
      <div className="card">
         
@@ -80,7 +80,7 @@ return(
             return (
             <div  className="fields"key={key}>
                 <div className="questao">
-                <p>{onSubmit.order} </p>
+                <p>{onSubmit.order}</p>
                 <p>{onSubmit.enunciation}</p>
                 </div>
 
@@ -92,28 +92,15 @@ return(
                 )  
             })}
 
-
-
-
-                
                 <div className="resposta">
-                    <form onSubmit={handleSubmit(Questao)}>
+                    <form onSubmit={handleSubmit(Questao)} key={key}>
                         <div className="r1">
-                          
-                        <input  type="checkbox"   {...register("answer")} value="Y"/>
-                        
-                        </div>
-
-                        <div  className="r2">
-                        <input type="checkbox"  {...register("answer")} value="N" />
-                        </div>
-                        
-                        <div  className="r3">
-                        <input type="checkbox"  {...register("answer")} value="X"/>
-                        </div>
-
-                        <div  className="r4">
-                        <input type="checkbox" {...register("answer")} value="P"/>
+                          <select type="text" {...register("answer")}>
+                          <option value="Y">Sim</option>
+                          <option value="N">Nao</option>
+                          <option value="X">não aplicável</option>
+                          <option value="P">Resposta adiadal</option>
+                          </select>
                         </div>
                         
                         <div  className="r5">
@@ -122,28 +109,13 @@ return(
                         </div>
 
                         <div className="btn-post" >
-                            <button type="submit" >Enviar</button>
+                            <button type="submit">Enviar</button>
                         </div>
-                    
-                      
-
-                       
+                  
                     </form>
                 
                 </div>
 
-              
-
-
-
-                
-          
-         
-               
-               
-                
-                
-                
             </div>
 
 
