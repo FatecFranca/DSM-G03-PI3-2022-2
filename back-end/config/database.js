@@ -4,13 +4,20 @@ const mongoose = require('mongoose')
 // de ambiente necessárias para fazer a conexão
 // ao banco de dados
 
-module.exports = function() {
-    mongoose.connect(`mongodb+srv://api_pet:123456jv@cluster0.v4fnoqw.mongodb.net/test`, {
+const {
+    MONGODB_USER,
+    MONGODB_PASS,
+    MONGODB_SERVER,
+    MONGODB_DATABASE
+} = process.env
+
+module.exports = function () {
+    mongoose.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_SERVER}/${MONGODB_DATABASE}?retryWrites=true&w=majority`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
 
-    mongoose.connection.on('connected', () => 
+    mongoose.connection.on('connected', () =>
         console.log('** Mongoose conectado ao servidor remoto **')
     )
 
