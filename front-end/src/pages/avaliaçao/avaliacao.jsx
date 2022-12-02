@@ -36,9 +36,9 @@ function Avaliacao() {
 
     const Questao = (data) =>
     axios
-      .post("http://localhost:3000/assessment/637d5577a95cbe7ab9e1cc31/answer",data)
+      .post("http://localhost:3000/assessment/63896a64d6deb281fc1d4aa4/answer",data)
       .then(() => {
-        navigate("/");
+        navigate("/Home");
       })
       .catch(() => {});
 
@@ -70,70 +70,77 @@ function Avaliacao() {
 
 
 return(
-    
  <div className="app"> 
       <Nav2/> 
-     <div className="card">
-        
-        <div   className="line-post">
-        {onSubmit.map((onSubmit, key) => {
-            return (
-            <div  className="fields"key={key}>
-                <div className="questao">
-                <p>{onSubmit.order}</p>
-                <p>{onSubmit.enunciation}</p>
-                </div>
 
-            {onSub.map((onSub, key) => {
-            return (
-                <div key={key}>
-                <p>{onSub.description} </p>
-                </div>
-                )  
-            })}
+      {onSubmit.map((onSubmit, key) => {
+      
+        return( 
+          <div className="ap" key={key}>
+            <div className="appp">
+              <form onSubmit={handleSubmit(Questao)}>
+                {onSub.map((onSub)=>{
+                  return(
+          
+                    
+              <div>
+              <p>{onSubmit.order}</p>
+              <p>{onSubmit.enunciation}</p>
+             <p>{onSub.description}</p>
+             </div>
+              
+                  )
 
-                <div className="resposta">
-                    <form onSubmit={handleSubmit(Questao)} key={key}>
-                        <div className="r1">
-                          <select type="text" {...register("answer")}>
-                          <option value="Y">Sim</option>
-                          <option value="N">Nao</option>
-                          <option value="X">não aplicável</option>
-                          <option value="P">Resposta adiadal</option>
-                          </select>
-                        </div>
-                        
-                        <div  className="r5">
-                        <input  type="text"  name="comment"{...register("comment")}/>
-                        <p className="error-message">{errors.comment?.message}</p>
-                        </div>
 
-                        <div className="btn-post" >
-                            <button type="submit">Enviar</button>
-                        </div>
-                  
-                    </form>
-                
-                </div>
+                })}
+
+           
+
+              <select type="text" {...register("answer")} >
+                  <option value=""></option>
+                  <option value="Y">Sim</option>
+                  <option value="N">Nao</option>
+                  <option value="X">Não aplicável</option>
+                  <option value="P">Resposta adiada</option>
+              </select>
+              <input type="text" placeholder="Digite um comentario"{...register("comment")} />
+              <input type="hidden" value={onSubmit._id} {...register("question")} />
+              <button type="submit" name="_next">
+                  Enviar Respostas
+                </button>
+
+
+              
+
+
+
+
+              </form>
+
+
+
+
+
+
 
             </div>
 
 
-
-
-                )
-            })}
-
-
-
-
-
-
-        </div>
-     </div>
-</div>
     
+          </div>
 
-    )
+
+
+
+        )
+      })}
+    </div>
+
+
+
+        
+)
+
 }
-export default  Avaliacao;
+
+export default  Avaliacao

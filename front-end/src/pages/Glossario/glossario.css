@@ -9,15 +9,23 @@
   width: 258px;
   height: 60px;
   left: 82px;
-  top: 196px;
-}
-
-.h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 191px;
   
 }
+
+.titulo{
+  width: 168px;
+    height: 44px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+   
+
+}
+
+
 .glossario h2 {
   width: 168px;
   height: 44px;

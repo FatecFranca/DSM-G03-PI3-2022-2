@@ -15,11 +15,7 @@ function NavLogin() {
                 Cadastro
               </button>
               </Link>
-              <Link to="/Sobre">
-              <button class="custom-btn btn-7" to="/Sobre">
-                Sobre
-              </button>
-              </Link>
+          
             </div>
           </li>
         </ul>

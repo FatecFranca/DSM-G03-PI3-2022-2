@@ -1,10 +1,10 @@
-import NavSobre from "../../components/navSobre/nav";
+import Nav2 from "../../components/nav/nav";
 import "../Sobre/sobre.css";
 
 export default function Sobre() {
   return (
     <div className="app">
-      <NavSobre />
+      <Nav2 />
       <div className="sobre">
         <h1>Sobre</h1>
 

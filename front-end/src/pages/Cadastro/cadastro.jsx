@@ -40,7 +40,7 @@ function Cadastro() {
       <div className="form">
       <NavCadastro/>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Cadastro de Usuario</h1>
+          <h1 className="cadastro">Cadastro de Usuario</h1>
           <label>
             <h4>Nome Completo:</h4>
             <input type="text" name="nome" {...register("name")} />

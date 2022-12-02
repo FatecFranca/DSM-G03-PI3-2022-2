@@ -1,19 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./glossario.css";
-import NavCadastro from "../../components/navCadastro/nav";
 
-//Pagina Questoes da Aplicação
+import "./glossario.css";
+import Nav2 from "../../components/nav/nav";
+
+
+
+
+
+
+
+
+
+
 export default function Glossario() {
   return (
     <div className="app">
-      <NavCadastro />
+      <Nav2/>
 
       <div className="glossario"></div>
       <div className="conteudo"></div>
       <div className="cont">
-        <h2 style={{ fontSize: "45px" }}> Glossario </h2>
-        <p>
+        <h1 className="titulo" style={{ fontSize: "45px" }}> Glossario </h1>
+        <p >
           O glossário aqui apresentado não tem a intenção de ser uma obra de
           referência completa. O seu objetivo é esclarecer os significados de
           alguns termos usados nesse trabalho. Um termo pode ser incluído nesse

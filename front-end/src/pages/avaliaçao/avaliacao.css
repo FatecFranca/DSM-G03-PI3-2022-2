@@ -1,52 +1,18 @@
-body{
-    background: #45464b3f;
+
+.ap form{
+    gap: 10px;
+    border-radius: 50px;
 }
+ .ap select{
+width: 300px;
+border-radius: 50px;
+} 
+.ap input{
+    width: 300px;
+    border-radius: 50px;
+    } 
 
-
-.card{
-    position: absolute;
-    width: 1245px;
-    left: 60px;
-    top: 132px;
-}
-
-
-
-.r1{
-
-    position: absolute;
-    width: 1245px;
-    left: 30px;
-    top: 132px;
-}
-
-.r5{
-    position: absolute;
-    width: 1240px;
-    left: 180px;
-    top: 132px;
-
-}
-
-.btn-post{
-    position: absolute;
-    width: 1230px;
-    left: 490px;
-    top: 110px;
-}
-
-input {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 1px;
-    border: 1px solid white;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-
-.resposta{
-    height: 20vh;
-   
+.ap{
+    
+   height: 40vh;
 }
