@@ -26,7 +26,7 @@ function Avaliacao() {
     let navigate = useNavigate();
 
     const [onSubmit, setonSubmit] = useState([]);
-    const [onSub, setonSub] = useState([]);
+   
   
     const { register, handleSubmit, formState: { errors }, } = useForm({
       resolver: yupResolver(validationPost)
@@ -36,7 +36,7 @@ function Avaliacao() {
 
     const Questao = (data) =>
     axios
-      .post("http://localhost:3000/assessment/63896a64d6deb281fc1d4aa4/answer",data)
+      .post("http://localhost:3000/assessment/638a484819118135db36138a/answer",data)
       .then(() => {
         navigate("/Home");
       })
@@ -55,17 +55,7 @@ function Avaliacao() {
           .catch(() => {});
       }, []);
 
-      useEffect(() => {
-        axios
-          .get("http://localhost:3000/criterion")
-    
-          .then((response) => {
-            setonSub(response.data)
-            console.log(response.data)
-          })
-          .catch(() => {});
-      }, []);
-
+     
   
 
 
@@ -79,20 +69,19 @@ return(
           <div className="ap" key={key}>
             <div className="appp">
               <form onSubmit={handleSubmit(Questao)}>
-                {onSub.map((onSub)=>{
-                  return(
+              
           
                     
               <div>
               <p>{onSubmit.order}</p>
               <p>{onSubmit.enunciation}</p>
-             <p>{onSub.description}</p>
+              <p>{onSubmit.criterion.name}</p>
+
+             <p>{onSubmit.criterion.description}</p>
+
              </div>
               
-                  )
-
-
-                })}
+              
 
            
 
